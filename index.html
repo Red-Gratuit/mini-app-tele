@@ -1,67 +1,73 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>XRshop</title>
 
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <audio id="bgMusic" src="music.mp3" loop></audio>
 
-  <!-- HEADER -->
-  <header class="header">
-    <h1>XRshop</h1>
-  </header>
+<audio id="bgMusic" src="music.mp3" loop></audio>
 
-  <!-- CONTENT -->
+<!-- INTRO -->
+<section id="intro" class="screen active">
+  <div class="bg"></div>
+  <h1 class="logo">XRshop</h1>
+  <button id="enterBtn" class="enter-btn">Entrée</button>
+</section>
+
+<!-- APP -->
+<section id="app" class="screen">
+  <header class="header">XRshop</header>
+
   <main class="content">
 
     <!-- PUFFS -->
-    <section class="page active" id="puffs">
+    <section id="puffs" class="page active">
       <div class="grid">
-        <div class="product">
+
+        <div class="card">
           <img src="image1.jpg">
-          <span class="stock">EN STOCK</span>
-          <h3>16K JNR</h3>
-          <p>10€</p>
+          <p>16K JNR<br><span>10€</span></p>
+          <button class="snap-btn">👻 Snapchat</button>
         </div>
 
-        <div class="product">
+        <div class="card">
           <img src="image2.jpg">
-          <span class="stock">EN STOCK</span>
-          <h3>18K JNR</h3>
-          <p>10€</p>
+          <p>18K JNR<br><span>10€</span></p>
+          <button class="snap-btn">👻 Snapchat</button>
         </div>
+
       </div>
     </section>
 
     <!-- INFOS -->
-    <section class="page" id="infos">
-      <h2>ℹ️ Infos</h2>
-      <p>Commandes sécurisées 24/7</p>
-      <p>Livraison rapide</p>
+    <section id="infos" class="page">
+      <h2>XRshop</h2>
+      <p>sur place uniquement 24/7<br>Livraison rapide</p>
+      <button class="snap-btn big">👻 Ajouter sur Snapchat</button>
     </section>
 
     <!-- CONTACT -->
-    <section class="page" id="contact">
-      <h2>📩 Contact</h2>
-      <button id="snapBtn">Ajouter sur Snapchat</button>
+    <section id="contact" class="page">
+      <h2>Contact</h2>
+      <button class="snap-btn big">👻 Snapchat</button>
     </section>
 
   </main>
 
-  <!-- BOTTOM BAR -->
-  <nav class="bottom-bar">
+  <nav class="bottom">
     <button data-page="puffs">🛒</button>
     <button data-page="infos">ℹ️</button>
     <button data-page="contact">📞</button>
     <button id="muteBtn">🔊</button>
   </nav>
+</section>
 
-  <script src="app.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
