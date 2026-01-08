@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mini App Telegram</title>
+</head>
+
+<body style="
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  background:#0f0f0f;
+  color:white;
+  font-family:sans-serif;
+">
+
+  <h1>Mini App Telegram</h1>
+  <p id="status">Chargement…</p>
+
+  <script>
+    if (window.Telegram && window.Telegram.WebApp) {
+      document.getElementById("status").innerText =
+        "✅ Telegram WebApp détecté";
+      Telegram.WebApp.expand();
+    } else {
+      document.getElementById("status").innerText =
+        "❌ Pas dans Telegram";
+    }
+  </script>
+
+</body>
+</html>
