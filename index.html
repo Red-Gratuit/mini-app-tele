@@ -5,9 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>XR Shop</title>
 
-  <!-- SDK Telegram -->
+  <!-- Telegram SDK -->
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
-
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -18,13 +17,24 @@
   <main class="app">
     <div class="overlay"></div>
 
-    <section class="card">
-      <h1>🚀 XR Shop</h1>
-      <p class="subtitle">🔥 XR Shop</p>
-
+    <!-- ÉCRAN ACCUEIL -->
+    <section class="card screen active" id="home">
+      <div class="logo">🚀</div>
+      <h1>XR Shop</h1>
       <p id="status" class="status">Connexion…</p>
 
-      <button id="mainBtn">Entrer</button>
+      <button id="enterBtn">Entrer</button>
+    </section>
+
+    <!-- ÉCRAN MENU -->
+    <section class="card screen" id="menu">
+      <h2>🛒 Menu</h2>
+
+      <div class="item">🔥 Produit 1</div>
+      <div class="item">💎 Produit 2</div>
+      <div class="item">⚡ Produit 3</div>
+
+      <button id="muteBtn">🔇 Muet</button>
     </section>
   </main>
 
