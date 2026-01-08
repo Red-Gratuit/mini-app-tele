@@ -1,34 +1,30 @@
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+  font-family: system-ui, sans-serif;
 }
 
 body {
-  margin: 0;
-  min-height: 100vh;
-  font-family: system-ui, sans-serif;
-  color: white;
+  height: 100vh;
   background: url("flyer.jpg") center / cover no-repeat fixed;
+  color: white;
+  overflow: hidden;
 }
 
-/* fond flouté */
+/* fond flou */
 .blur-bg {
   position: fixed;
   inset: 0;
-  backdrop-filter: blur(14px) brightness(0.6);
-  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(18px) brightness(0.6);
+  background: rgba(0,0,0,0.4);
   z-index: 0;
-}
-
-.app {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
 }
 
 /* écrans */
 .screen {
+  position: absolute;
+  inset: 0;
   display: none;
   z-index: 1;
 }
@@ -37,104 +33,87 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  animation: fadeZoom 0.8s ease;
+  justify-content: center;
+  animation: fadeIn 1s ease;
 }
 
-/* INTRO */
-.intro {
-  text-align: center;
-}
-
-.logo-glow {
-  font-size: 48px;
-  letter-spacing: 3px;
-  margin-bottom: 30px;
-  animation: glowPulse 2.5s infinite;
+/* LOGO */
+.xr-logo {
+  font-size: 52px;
+  letter-spacing: 4px;
+  margin-bottom: 40px;
   text-shadow:
     0 0 10px #3b82f6,
-    0 0 30px rgba(59,130,246,0.9),
-    0 0 60px rgba(59,130,246,0.6);
+    0 0 40px rgba(59,130,246,0.9);
+  animation: glow 3s infinite;
 }
 
-/* bouton premium */
-.cta {
-  padding: 16px 30px;
+/* bouton intro */
+.start-btn {
+  padding: 16px 36px;
   font-size: 18px;
   border-radius: 30px;
   border: none;
   background: linear-gradient(135deg, #3b82f6, #2563eb);
   color: white;
   font-weight: 800;
-  box-shadow: 0 0 25px rgba(59,130,246,0.8);
-}
-
-.cta:active {
-  transform: scale(0.95);
 }
 
 /* CONTENU */
-.card {
-  width: 92%;
-  max-width: 390px;
-  background: rgba(18,18,25,0.88);
-  backdrop-filter: blur(10px);
-  border-radius: 22px;
-  padding: 24px;
-  text-align: center;
-  box-shadow: 0 30px 70px rgba(0,0,0,0.7);
-}
-
-.glow {
-  margin-bottom: 20px;
-  text-shadow:
-    0 0 8px #3b82f6,
-    0 0 20px rgba(59,130,246,0.8);
+.content {
+  padding-top: 80px;
+  gap: 30px;
 }
 
 .cards {
   display: flex;
-  gap: 14px;
-  margin-bottom: 20px;
+  gap: 20px;
 }
 
-.img-block {
-  flex: 1;
+.card {
+  width: 160px;
+  background: rgba(20,20,30,0.85);
+  border-radius: 18px;
+  padding: 6px;
+  text-align: center;
+  animation: slideUp 0.8s ease forwards;
 }
 
-.img-card {
-  padding: 3px;
-  border-radius: 16px;
-  background: linear-gradient(135deg, #3b82f6, #2563eb);
-}
-
-.img-card img {
+.card img {
   width: 100%;
-  height: 130px;
+  height: 160px;
   object-fit: cover;
   border-radius: 14px;
 }
 
-.price {
+.card span {
+  display: block;
   margin-top: 8px;
   font-weight: 700;
 }
 
-button {
-  width: 100%;
-  padding: 15px;
-  border-radius: 16px;
+.snap-btn {
+  margin-top: 40px;
+  padding: 14px 30px;
+  border-radius: 30px;
   border: none;
-  background: linear-gradient(135deg, #3b82f6, #2563eb);
-  color: white;
-  font-weight: 700;
+  background: #fffc00;
+  color: black;
+  font-weight: 800;
 }
 
-@keyframes glowPulse {
+/* animations */
+@keyframes glow {
   0%,100% { text-shadow: 0 0 10px #3b82f6; }
-  50% { text-shadow: 0 0 35px #60a5fa; }
+  50% { text-shadow: 0 0 40px #60a5fa; }
 }
 
-@keyframes fadeZoom {
-  from { opacity: 0; transform: scale(0.9); }
-  to { opacity: 1; transform: scale(1); }
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
 }

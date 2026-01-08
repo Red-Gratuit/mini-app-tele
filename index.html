@@ -12,38 +12,30 @@
 <body>
   <audio id="bgMusic" src="music.mp3" loop></audio>
 
-  <main class="app">
-    <div class="blur-bg"></div>
+  <div class="blur-bg"></div>
 
-    <!-- INTRO -->
-    <section class="intro screen active" id="intro">
-      <h1 class="logo-glow">XRshop</h1>
-      <button id="startBtn" class="cta">Choisir sa puff</button>
-    </section>
+  <!-- INTRO -->
+  <section class="intro screen active" id="intro">
+    <h1 class="xr-logo">XRshop</h1>
+    <button id="startBtn" class="start-btn">Choisir sa puff</button>
+  </section>
 
-    <!-- CONTENU -->
-    <section class="card screen" id="content">
-      <h2 class="glow">XR SHOP</h2>
-
-      <div class="cards">
-        <div class="img-block">
-          <div class="img-card">
-            <img src="image1.jpg" />
-          </div>
-          <p class="price">16K JNR — 10€</p>
-        </div>
-
-        <div class="img-block">
-          <div class="img-card">
-            <img src="image2.jpg" />
-          </div>
-          <p class="price">18K JNR — 10€</p>
-        </div>
+  <!-- CONTENU -->
+  <section class="content screen" id="content">
+    <div class="cards">
+      <div class="card">
+        <img src="image1.jpg" />
+        <span>16K JNR 10€</span>
       </div>
 
-      <button id="snapBtn">👻 Ajouter sur Snapchat</button>
-    </section>
-  </main>
+      <div class="card">
+        <img src="image2.jpg" />
+        <span>18K JNR 10€</span>
+      </div>
+    </div>
+
+    <button id="snapBtn" class="snap-btn">Ajouter sur Snapchat</button>
+  </section>
 
   <script src="app.js"></script>
 </body>
