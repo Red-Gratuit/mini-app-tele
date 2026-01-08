@@ -1,23 +1,27 @@
-const status = document.getElementById("status");
-const subtitle = document.getElementById("subtitle");
 const button = document.getElementById("mainBtn");
+const status = document.getElementById("status");
+const music = document.getElementById("bgMusic");
 
 let tg = null;
 
+// Telegram
 if (window.Telegram && Telegram.WebApp) {
   tg = Telegram.WebApp;
   tg.expand();
-
   status.textContent = "✅ Connecté à Telegram";
-  subtitle.textContent = `👋 ${tg.initDataUnsafe?.user?.first_name || "Utilisateur"}`;
 } else {
-  status.textContent = "Mode aperçu";
+  status.textContent = "ℹ️ Mode aperçu";
 }
 
-button.onclick = () => {
+// ▶️ Clic sur Entrer
+button.addEventListener("click", () => {
+  // 🎵 Musique (autorisé après interaction utilisateur)
+  music.volume = 0.5;
+  music.play().catch(() => {});
+
   if (tg) {
     tg.showAlert("Bienvenue sur XR Shop 🚀");
   } else {
     alert("Bienvenue sur XR Shop 🚀");
   }
-};
+});
