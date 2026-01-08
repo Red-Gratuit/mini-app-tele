@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mini App Telegram</title>
 </head>
 
@@ -22,14 +22,21 @@
   <p id="status">Chargement…</p>
 
   <script>
-    if (window.Telegram && window.Telegram.WebApp) {
-      document.getElementById("status").innerText =
-        "✅ Telegram WebApp détecté";
-      Telegram.WebApp.expand();
-    } else {
-      document.getElementById("status").innerText =
-        "❌ Pas dans Telegram";
+    function checkTelegram() {
+      if (window.Telegram && window.Telegram.WebApp) {
+        document.getElementById("status").innerText =
+          "✅ Telegram WebApp détecté";
+        Telegram.WebApp.expand();
+      } else {
+        document.getElementById("status").innerText =
+          "❌ Pas dans Telegram";
+      }
     }
+
+    // Telegram Desktop injecte l'objet APRÈS le load
+    window.addEventListener("load", () => {
+      setTimeout(checkTelegram, 300);
+    });
   </script>
 
 </body>
