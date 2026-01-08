@@ -136,10 +136,25 @@ body::before {
   text-shadow: 0 0 15px #00ff88;
 }
 
-/* BARRE DU BAS */
+/* BARRE DU BAS CLEAN */
 .bottom {
   display: flex;
   justify-content: space-around;
-  padding: 12px;
-  box-shadow: 0 0 20px #00ff88;
+  align-items: center;
+  padding: 12px 0;
+  background: transparent;
+  border-top: 1px solid rgba(0,255,136,0.3);
+}
+
+.bottom button {
+  background: none;
+  border: none;
+  font-size: 22px;
+  color: #00ff88;
+  text-shadow: 0 0 8px #00ff88;
+  padding: 6px;
+}
+
+.bottom button:active {
+  transform: scale(0.9);
 }
