@@ -2,22 +2,12 @@ const tg = window.Telegram?.WebApp || null;
 
 const music = document.getElementById("bgMusic");
 const enterBtn = document.getElementById("enterBtn");
-const muteBtn = document.getElementById("muteBtn");
-const status = document.getElementById("status");
+const snapBtn = document.getElementById("snapBtn");
 
 const home = document.getElementById("home");
-const menu = document.getElementById("menu");
+const content = document.getElementById("content");
 
-let isMuted = false;
-
-if (tg) {
-  tg.expand();
-  status.textContent = "✅ Connecté à Telegram";
-} else {
-  status.textContent = "ℹ️ Mode aperçu";
-}
-
-// 🎚️ Fade-in du volume
+// 🎚️ Fade-in musique
 function fadeInMusic() {
   music.volume = 0;
   music.play().catch(() => {});
@@ -29,19 +19,22 @@ function fadeInMusic() {
     } else {
       clearInterval(fade);
     }
-  }, 100);
+  }, 80);
 }
 
 // ▶️ Entrer
 enterBtn.addEventListener("click", () => {
   fadeInMusic();
   home.classList.remove("active");
-  menu.classList.add("active");
+  content.classList.add("active");
 });
 
-// 🔇 Mute / Unmute
-muteBtn.addEventListener("click", () => {
-  isMuted = !isMuted;
-  music.muted = isMuted;
-  muteBtn.textContent = isMuted ? "🔊 Son" : "🔇 Muet";
+// 👻 Snapchat (REMPLACE PAR TON LIEN)
+snapBtn.addEventListener("click", () => {
+  const snapchatUrl = "https://www.snapchat.com/add/enzoxr.59";
+  if (tg) {
+    tg.openLink(snapchatUrl);
+  } else {
+    window.open(snapchatUrl, "_blank");
+  }
 });
