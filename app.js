@@ -1,33 +1,30 @@
 const tg = window.Telegram?.WebApp || null;
-
-const music = document.getElementById("bgMusic");
-const startBtn = document.getElementById("startBtn");
-const snapBtn = document.getElementById("snapBtn");
-
-const intro = document.getElementById("intro");
-const products = document.getElementById("products");
-
 if (tg) tg.expand();
 
-// fade-in musique
-function startMusic() {
-  music.volume = 0;
-  music.play().catch(()=>{});
-  let v = 0;
-  const fade = setInterval(() => {
-    if (v < 0.5) {
-      v += 0.02;
-      music.volume = v;
-    } else clearInterval(fade);
-  }, 80);
-}
+const pages = document.querySelectorAll(".page");
+const navButtons = document.querySelectorAll(".bottom-bar button[data-page]");
+const music = document.getElementById("bgMusic");
+const muteBtn = document.getElementById("muteBtn");
+const snapBtn = document.getElementById("snapBtn");
 
-startBtn.onclick = () => {
-  startMusic();
-  intro.classList.remove("active");
-  products.classList.add("active");
+let muted = false;
+
+// navigation
+navButtons.forEach(btn => {
+  btn.onclick = () => {
+    pages.forEach(p => p.classList.remove("active"));
+    document.getElementById(btn.dataset.page).classList.add("active");
+  };
+});
+
+// volume
+muteBtn.onclick = () => {
+  muted = !muted;
+  music.muted = muted;
+  muteBtn.textContent = muted ? "🔇" : "🔊";
 };
 
+// snapchat
 snapBtn.onclick = () => {
   const url = "https://www.snapchat.com/add/enzoxr.59";
   if (tg) tg.openLink(url);
