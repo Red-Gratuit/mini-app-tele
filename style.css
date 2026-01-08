@@ -2,99 +2,100 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: system-ui, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
 }
 
 body {
   height: 100vh;
-  background: url("flyer.jpg") center / cover no-repeat fixed;
-  color: white;
   overflow: hidden;
+  color: white;
 }
 
-/* fond flou */
-.blur-bg {
+/* fond flyer flouté iOS */
+.background {
   position: fixed;
   inset: 0;
-  backdrop-filter: blur(18px) brightness(0.6);
-  background: rgba(0,0,0,0.4);
+  background: url("flyer.jpg") center / cover no-repeat;
+  filter: blur(22px) brightness(0.65);
+  transform: scale(1.1);
   z-index: 0;
 }
 
 /* écrans */
 .screen {
-  position: absolute;
+  position: fixed;
   inset: 0;
   display: none;
   z-index: 1;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .screen.active {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  animation: fadeIn 1s ease;
+  animation: fadeIn 0.8s ease;
 }
 
-/* LOGO */
-.xr-logo {
-  font-size: 52px;
-  letter-spacing: 4px;
-  margin-bottom: 40px;
+/* logo XRshop */
+.logo {
+  font-size: 48px;
+  letter-spacing: 2px;
+  margin-bottom: 32px;
+  color: #f8faff;
   text-shadow:
-    0 0 10px #3b82f6,
-    0 0 40px rgba(59,130,246,0.9);
-  animation: glow 3s infinite;
+    0 0 8px rgba(255,255,255,0.6),
+    0 0 22px rgba(59,130,246,0.9);
+  animation: logoIn 0.8s ease;
 }
 
-/* bouton intro */
-.start-btn {
+/* bouton principal */
+.primary-btn {
   padding: 16px 36px;
-  font-size: 18px;
-  border-radius: 30px;
+  font-size: 17px;
+  border-radius: 28px;
   border: none;
-  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  background: #3b82f6;
   color: white;
-  font-weight: 800;
+  font-weight: 700;
+  animation: buttonIn 0.6s ease 0.4s both;
 }
 
-/* CONTENU */
-.content {
-  padding-top: 80px;
-  gap: 30px;
+/* produits */
+#products {
+  gap: 36px;
 }
 
 .cards {
   display: flex;
-  gap: 20px;
+  gap: 22px;
 }
 
-.card {
-  width: 160px;
-  background: rgba(20,20,30,0.85);
+.product {
+  width: 150px;
+  background: rgba(0,0,0,0.45);
   border-radius: 18px;
   padding: 6px;
   text-align: center;
-  animation: slideUp 0.8s ease forwards;
+  animation: slideUp 0.8s ease;
 }
 
-.card img {
+.product img {
   width: 100%;
-  height: 160px;
-  object-fit: cover;
+  height: 150px;
   border-radius: 14px;
+  object-fit: cover;
 }
 
-.card span {
-  display: block;
+.product p {
   margin-top: 8px;
-  font-weight: 700;
+  font-weight: 600;
+  font-size: 14px;
 }
 
+/* bouton snapchat */
 .snap-btn {
-  margin-top: 40px;
-  padding: 14px 30px;
+  padding: 14px 34px;
   border-radius: 30px;
   border: none;
   background: #fffc00;
@@ -103,17 +104,22 @@ body {
 }
 
 /* animations */
-@keyframes glow {
-  0%,100% { text-shadow: 0 0 10px #3b82f6; }
-  50% { text-shadow: 0 0 40px #60a5fa; }
-}
-
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
 }
 
+@keyframes logoIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes buttonIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 @keyframes slideUp {
-  from { transform: translateY(40px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }

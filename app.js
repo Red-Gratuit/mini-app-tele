@@ -5,26 +5,27 @@ const startBtn = document.getElementById("startBtn");
 const snapBtn = document.getElementById("snapBtn");
 
 const intro = document.getElementById("intro");
-const content = document.getElementById("content");
+const products = document.getElementById("products");
 
 if (tg) tg.expand();
 
-function fadeInMusic() {
+// fade-in musique
+function startMusic() {
   music.volume = 0;
   music.play().catch(()=>{});
   let v = 0;
-  const i = setInterval(() => {
+  const fade = setInterval(() => {
     if (v < 0.5) {
       v += 0.02;
       music.volume = v;
-    } else clearInterval(i);
+    } else clearInterval(fade);
   }, 80);
 }
 
 startBtn.onclick = () => {
-  fadeInMusic();
+  startMusic();
   intro.classList.remove("active");
-  content.classList.add("active");
+  products.classList.add("active");
 };
 
 snapBtn.onclick = () => {
