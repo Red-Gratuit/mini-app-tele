@@ -13,10 +13,10 @@ const snapBtns = document.querySelectorAll(".snap-btn");
 
 let muted = false;
 
-/* MUSIQUE FADE IN */
+/* MUSIQUE */
 function startMusic() {
   music.volume = 0;
-  music.play().catch(() => {});
+  music.play().catch(()=>{});
   let v = 0;
   const fade = setInterval(() => {
     if (v < 0.6) {
@@ -48,7 +48,7 @@ muteBtn.onclick = () => {
   muteBtn.textContent = muted ? "🔇" : "🔊";
 };
 
-/* SNAPCHAT */
+/* SNAP */
 snapBtns.forEach(btn => {
   btn.onclick = () => {
     const url = "https://www.snapchat.com/add/enzoxr.59";

@@ -5,7 +5,7 @@
   font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
 }
 
-/* FLYER EN ARRIERE PLAN */
+/* FLYER EN FOND */
 body {
   min-height: 100vh;
   background: url("flyer.jpg") center / cover no-repeat fixed;
@@ -17,7 +17,7 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.78);
+  background: rgba(0,0,0,0.78);
   z-index: -1;
 }
 
@@ -28,25 +28,22 @@ body::before {
   display: none;
   flex-direction: column;
 }
-
-.screen.active {
-  display: flex;
-}
+.screen.active { display: flex; }
 
 /* INTRO */
 .bg {
   position: absolute;
   inset: 0;
   background: url("flyer.jpg") center / cover no-repeat;
-  filter: blur(18px) brightness(0.6);
+  filter: blur(20px) brightness(0.6);
   z-index: -1;
 }
 
 .logo {
   margin-top: 35vh;
   font-size: 46px;
-  text-align: center;
   color: #00ff88;
+  text-align: center;
   text-shadow: 0 0 20px #00ff88;
 }
 
@@ -59,13 +56,7 @@ body::before {
   border: none;
   background: #00ff88;
   color: black;
-  box-shadow: 0 0 20px #00ff88, 0 0 50px #00ff88;
-  animation: glow 2s infinite alternate;
-}
-
-@keyframes glow {
-  from { box-shadow: 0 0 20px #00ff88; }
-  to { box-shadow: 0 0 60px #00ff88; }
+  box-shadow: 0 0 25px #00ff88, 0 0 60px #00ff88;
 }
 
 /* HEADER */
@@ -79,11 +70,15 @@ body::before {
 /* CONTENT */
 .content {
   flex: 1;
-  overflow-y: auto;
   padding: 20px;
+  overflow-y: auto;
 }
 
-/* CARTES */
+/* PAGES */
+.page { display: none; }
+.page.active { display: block; }
+
+/* PRODUITS */
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -91,17 +86,17 @@ body::before {
 }
 
 .card {
-  background: rgba(0, 0, 0, 0.65);
+  background: rgba(0,0,0,0.65);
   border-radius: 22px;
   padding: 12px;
-  box-shadow: 0 0 25px rgba(0, 255, 136, 0.5);
+  box-shadow: 0 0 25px rgba(0,255,136,0.5);
 }
 
 .card img {
   width: 100%;
   height: 160px;
-  object-fit: cover;
   border-radius: 18px;
+  object-fit: cover;
 }
 
 .card h3 {
@@ -113,7 +108,7 @@ body::before {
   font-weight: 700;
 }
 
-/* SNAP BOUTON */
+/* SNAP */
 .snap-btn {
   margin-top: 10px;
   width: 100%;
@@ -125,8 +120,9 @@ body::before {
   font-weight: 800;
   box-shadow: 0 0 20px #00ff88;
 }
+.snap-btn.big { margin-top: 30px; }
 
-/* TEXTE BAS */
+/* SLOGAN */
 .slogan {
   margin: 40px 10px 90px;
   text-align: center;
@@ -136,25 +132,16 @@ body::before {
   text-shadow: 0 0 15px #00ff88;
 }
 
-/* BARRE DU BAS CLEAN */
+/* BARRE DU BAS */
 .bottom {
   display: flex;
   justify-content: space-around;
-  align-items: center;
   padding: 12px 0;
-  background: transparent;
-  border-top: 1px solid rgba(0,255,136,0.3);
+  border-top: 1px solid rgba(0,255,136,0.4);
 }
-
 .bottom button {
   background: none;
   border: none;
   font-size: 22px;
   color: #00ff88;
-  text-shadow: 0 0 8px #00ff88;
-  padding: 6px;
-}
-
-.bottom button:active {
-  transform: scale(0.9);
 }
