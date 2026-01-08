@@ -3,42 +3,45 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>XR Shop</title>
+  <title>XRshop</title>
 
-  <!-- Telegram SDK -->
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <!-- 🎵 Musique -->
   <audio id="bgMusic" src="music.mp3" loop></audio>
 
   <main class="app">
-    <div class="overlay"></div>
+    <div class="blur-bg"></div>
 
-    <!-- ÉCRAN ACCUEIL -->
-    <section class="card screen active" id="home">
-      <div class="logo">🚀</div>
-      <h1>XR Shop</h1>
-      <button id="enterBtn">Entrer</button>
+    <!-- INTRO -->
+    <section class="intro screen active" id="intro">
+      <h1 class="logo-glow">XRshop</h1>
+      <button id="startBtn" class="cta">Choisir sa puff</button>
     </section>
 
-    <!-- ÉCRAN CONTENU -->
+    <!-- CONTENU -->
     <section class="card screen" id="content">
-      <h2>🔥 Découvre-nous</h2>
+      <h2 class="glow">XR SHOP</h2>
 
       <div class="cards">
-        <div class="img-card">
-          <img src="image1.jpg" alt="Image 1" />
+        <div class="img-block">
+          <div class="img-card">
+            <img src="image1.jpg" />
+          </div>
+          <p class="price">16K JNR — 10€</p>
         </div>
 
-        <div class="img-card">
-          <img src="image2.jpg" alt="Image 2" />
+        <div class="img-block">
+          <div class="img-card">
+            <img src="image2.jpg" />
+          </div>
+          <p class="price">18K JNR — 10€</p>
         </div>
       </div>
 
-      <button id="snapBtn">👻 Mon Snapchat</button>
+      <button id="snapBtn">👻 Ajouter sur Snapchat</button>
     </section>
   </main>
 

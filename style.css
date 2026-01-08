@@ -10,6 +10,15 @@ body {
   background: url("flyer.jpg") center / cover no-repeat fixed;
 }
 
+/* fond flouté */
+.blur-bg {
+  position: fixed;
+  inset: 0;
+  backdrop-filter: blur(14px) brightness(0.6);
+  background: rgba(0,0,0,0.35);
+  z-index: 0;
+}
+
 .app {
   min-height: 100vh;
   display: flex;
@@ -18,52 +27,83 @@ body {
   position: relative;
 }
 
-.overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.65);
-}
-
 /* écrans */
 .screen {
   display: none;
+  z-index: 1;
 }
 
 .screen.active {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeZoom 0.8s ease;
 }
 
-/* carte principale */
+/* INTRO */
+.intro {
+  text-align: center;
+}
+
+.logo-glow {
+  font-size: 48px;
+  letter-spacing: 3px;
+  margin-bottom: 30px;
+  animation: glowPulse 2.5s infinite;
+  text-shadow:
+    0 0 10px #3b82f6,
+    0 0 30px rgba(59,130,246,0.9),
+    0 0 60px rgba(59,130,246,0.6);
+}
+
+/* bouton premium */
+.cta {
+  padding: 16px 30px;
+  font-size: 18px;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+  font-weight: 800;
+  box-shadow: 0 0 25px rgba(59,130,246,0.8);
+}
+
+.cta:active {
+  transform: scale(0.95);
+}
+
+/* CONTENU */
 .card {
-  position: relative;
-  z-index: 1;
   width: 92%;
-  max-width: 380px;
-  background: rgba(18, 18, 25, 0.9);
-  backdrop-filter: blur(12px);
+  max-width: 390px;
+  background: rgba(18,18,25,0.88);
+  backdrop-filter: blur(10px);
   border-radius: 22px;
   padding: 24px;
   text-align: center;
-  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.7);
-  animation: fadeUp 0.5s ease;
+  box-shadow: 0 30px 70px rgba(0,0,0,0.7);
 }
 
-.logo {
-  font-size: 52px;
-  margin-bottom: 10px;
+.glow {
+  margin-bottom: 20px;
+  text-shadow:
+    0 0 8px #3b82f6,
+    0 0 20px rgba(59,130,246,0.8);
 }
 
-/* cartes images */
 .cards {
   display: flex;
   gap: 14px;
-  margin: 20px 0;
+  margin-bottom: 20px;
+}
+
+.img-block {
+  flex: 1;
 }
 
 .img-card {
-  flex: 1;
-  border-radius: 16px;
   padding: 3px;
+  border-radius: 16px;
   background: linear-gradient(135deg, #3b82f6, #2563eb);
 }
 
@@ -74,12 +114,14 @@ body {
   border-radius: 14px;
 }
 
-/* bouton */
+.price {
+  margin-top: 8px;
+  font-weight: 700;
+}
+
 button {
   width: 100%;
   padding: 15px;
-  margin-top: 14px;
-  font-size: 16px;
   border-radius: 16px;
   border: none;
   background: linear-gradient(135deg, #3b82f6, #2563eb);
@@ -87,17 +129,12 @@ button {
   font-weight: 700;
 }
 
-button:active {
-  transform: scale(0.96);
+@keyframes glowPulse {
+  0%,100% { text-shadow: 0 0 10px #3b82f6; }
+  50% { text-shadow: 0 0 35px #60a5fa; }
 }
 
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(18px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+@keyframes fadeZoom {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
 }
