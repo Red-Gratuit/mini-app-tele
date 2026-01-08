@@ -4,6 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mini App Telegram</title>
+
+  <!-- ✅ SDK OFFICIEL TELEGRAM -->
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 
 <body style="
@@ -22,20 +25,15 @@
   <p id="status">Chargement…</p>
 
   <script>
-    function checkTelegram() {
-      if (window.Telegram && window.Telegram.WebApp) {
+    window.addEventListener("load", () => {
+      if (window.Telegram && Telegram.WebApp) {
         document.getElementById("status").innerText =
           "✅ Telegram WebApp détecté";
         Telegram.WebApp.expand();
       } else {
         document.getElementById("status").innerText =
-          "❌ Pas dans Telegram";
+          "❌ SDK Telegram non détecté";
       }
-    }
-
-    // Telegram Desktop injecte l'objet APRÈS le load
-    window.addEventListener("load", () => {
-      setTimeout(checkTelegram, 300);
     });
   </script>
 
