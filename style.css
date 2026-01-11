@@ -2,63 +2,53 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Arial", sans-serif;
+  font-family: Arial, sans-serif;
 }
 
 html, body {
   width: 100%;
   height: 100%;
-  overflow: hidden;
   background: black;
+  overflow-x: hidden;
 }
 
-/* ===========================
-   GLOBAL SCREENS
-=========================== */
+/* ===== SCREENS ===== */
 .screen {
-  position: fixed;
-  inset: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100%;
   display: none;
-  overflow-y: auto;
 }
 
 .screen.active {
   display: block;
 }
 
-/* ===========================
-   INTRO
-=========================== */
+/* ===== INTRO ===== */
 #intro {
-  background: url("flyer.jpg") center / cover no-repeat;
+  background: url("flyer.jpg") center/cover no-repeat;
 }
 
 #intro::before {
   content: "";
   position: absolute;
   inset: 0;
-  backdrop-filter: blur(12px);
-  background: rgba(0,0,0,0.6);
-}
-
-#intro .bg {
-  position: absolute;
-  inset: 0;
+  background: rgba(0,0,0,0.65);
 }
 
 .main-logo {
   width: 220px;
   max-width: 80%;
-  position: relative;
-  margin: 80px auto 40px;
   display: block;
+  margin: 80px auto 40px;
+  position: relative;
   z-index: 2;
-  filter: drop-shadow(0 0 25px #00ff99);
+  filter: drop-shadow(0 0 20px #00ff99);
 }
 
 .enter-btn {
-  position: relative;
-  z-index: 2;
   display: block;
   margin: 0 auto;
   padding: 18px 40px;
@@ -68,48 +58,38 @@ html, body {
   color: black;
   font-size: 18px;
   font-weight: bold;
-  box-shadow: 0 0 40px #00ff99;
-  animation: glow 2s infinite alternate;
+  box-shadow: 0 0 25px #00ff99;
+  position: relative;
+  z-index: 2;
 }
 
-@keyframes glow {
-  from { box-shadow: 0 0 15px #00ff99; }
-  to   { box-shadow: 0 0 40px #00ff99; }
-}
-
-/* ===========================
-   APP
-=========================== */
+/* ===== APP ===== */
 #app {
-  background: url("flyer.jpg") center / cover no-repeat;
+  background: url("flyer.jpg") center/cover no-repeat;
+  min-height: 100vh;
 }
 
 #app::before {
   content: "";
   position: absolute;
   inset: 0;
-  backdrop-filter: blur(8px);
-  background: rgba(0,0,0,0.7);
+  background: rgba(0,0,0,0.75);
 }
 
-/* ===========================
-   HEADER
-=========================== */
+/* ===== HEADER ===== */
 .header {
+  text-align: center;
+  padding: 15px;
   position: relative;
   z-index: 2;
-  padding: 15px;
-  text-align: center;
 }
 
 .header-logo {
   width: 140px;
-  filter: drop-shadow(0 0 15px #00ff99);
+  filter: drop-shadow(0 0 12px #00ff99);
 }
 
-/* ===========================
-   CATEGORIES
-=========================== */
+/* ===== CATEGORIES ===== */
 .categories {
   display: flex;
   justify-content: center;
@@ -134,16 +114,14 @@ html, body {
   box-shadow: 0 0 15px #00ff99;
 }
 
-/* ===========================
-   CONTENT
-=========================== */
+/* ===== CONTENT ===== */
 .content {
   padding: 15px;
   position: relative;
   z-index: 2;
 }
 
-/* pages */
+/* Pages */
 .page {
   display: none;
 }
@@ -152,9 +130,7 @@ html, body {
   display: block;
 }
 
-/* ===========================
-   PUFF GRID
-=========================== */
+/* ===== GRID ===== */
 .grid {
   display: grid;
   grid-template-columns: repeat(2,1fr);
@@ -165,7 +141,7 @@ html, body {
   background: rgba(0,0,0,0.8);
   border-radius: 18px;
   padding: 10px;
-  box-shadow: 0 0 25px rgba(0,255,150,.4);
+  box-shadow: 0 0 20px rgba(0,255,150,.4);
   text-align: center;
 }
 
@@ -195,9 +171,7 @@ html, body {
   font-weight: bold;
 }
 
-/* ===========================
-   SLOGAN
-=========================== */
+/* ===== SLOGAN ===== */
 .slogan {
   margin: 30px 0;
   text-align: center;
@@ -206,18 +180,14 @@ html, body {
   text-shadow: 0 0 10px #00ff99;
 }
 
-/* ===========================
-   FACADES
-=========================== */
+/* ===== FACADES ===== */
 .facade {
   text-align: center;
   color: white;
   padding: 40px;
 }
 
-/* ===========================
-   BOTTOM BAR
-=========================== */
+/* ===== BOTTOM ===== */
 .bottom {
   position: fixed;
   bottom: 10px;
