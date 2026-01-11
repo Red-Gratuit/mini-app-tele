@@ -12,7 +12,7 @@ html, body {
   overflow: hidden;
 }
 
-/* Base screens */
+/* Screens */
 .screen {
   display: none;
   width: 100%;
@@ -25,23 +25,19 @@ html, body {
 
 /* INTRO */
 #intro {
-  background: black;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  background: black;
   padding: 20px;
 }
 
-/* Logo */
 .main-logo {
-  width: 90%;
-  max-width: 320px;
-  max-height: 45vh;
-  object-fit: contain;
+  width: 80%;
+  max-width: 300px;
   margin-top: 20px;
 }
 
-/* Bouton */
 .enter-btn {
   background: #00ff9c;
   color: black;
@@ -52,7 +48,6 @@ html, body {
   border-radius: 30px;
   font-size: 20px;
   font-weight: bold;
-  box-shadow: 0 0 20px #00ff9c;
   margin-bottom: 20px;
 }
 
@@ -61,6 +56,7 @@ html, body {
   background: black;
   color: white;
   flex-direction: column;
+  overflow-y: auto;
 }
 
 /* Header */
@@ -71,7 +67,7 @@ html, body {
 }
 
 .header-logo {
-  height: 45px;
+  height: 50px;
 }
 
 /* Categories */
@@ -129,4 +125,5 @@ html, body {
   border: none;
   padding: 10px;
   border-radius: 20px;
+  font-weight: bold;
 }

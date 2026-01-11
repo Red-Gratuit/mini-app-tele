@@ -6,18 +6,27 @@ if (tg) {
 
 const btn = document.getElementById("enterBtn");
 const intro = document.getElementById("intro");
-const main = document.getElementById("main");
+const app = document.getElementById("app");   // ✅ BON ID
 const music = document.getElementById("bgMusic");
 
-btn.onclick = () => {
-    music.play();
-    intro.style.display = "none";
-    main.style.display = "block";
-};
+btn.addEventListener("click", () => {
+    if (music) {
+        music.play().catch(() => {}); // évite crash iOS
+    }
 
-document.querySelectorAll(".categories button").forEach(btn => {
-    btn.onclick = () => {
-        document.querySelectorAll(".page").forEach(p => p.style.display="none");
-        document.getElementById(btn.dataset.page).style.display="block";
-    };
+    intro.classList.remove("active");
+    app.classList.add("active");
+});
+
+/* Navigation catégories */
+document.querySelectorAll(".cat").forEach(button => {
+    button.addEventListener("click", () => {
+        document.querySelectorAll(".cat").forEach(b => b.classList.remove("active"));
+        button.classList.add("active");
+
+        const page = button.dataset.page;
+
+        document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
+        document.getElementById("page-" + page).classList.add("active");
+    });
 });
