@@ -1,147 +1,126 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+body{
+background:url("flyer.jpg") center/cover fixed;
+color:white;
+font-family:system-ui;
 }
 
-/* FLYER EN FOND */
-body {
-  min-height: 100vh;
-  background: url("flyer.jpg") center / cover no-repeat fixed;
-  color: white;
+body::before{
+content:"";
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.75);
+z-index:-1;
 }
 
-/* VOILE SOMBRE */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.78);
-  z-index: -1;
+.screen{display:none;flex-direction:column;position:fixed;inset:0;}
+.screen.active{display:flex;}
+
+.bg{
+position:absolute;
+inset:0;
+background:url("flyer.jpg") center/cover;
+filter:blur(20px) brightness(.5);
 }
 
-/* SCREENS */
-.screen {
-  position: fixed;
-  inset: 0;
-  display: none;
-  flex-direction: column;
-}
-.screen.active { display: flex; }
-
-/* INTRO */
-.bg {
-  position: absolute;
-  inset: 0;
-  background: url("flyer.jpg") center / cover no-repeat;
-  filter: blur(20px) brightness(0.6);
-  z-index: -1;
+.logo{
+margin-top:35vh;
+text-align:center;
+font-size:42px;
+color:#00ff88;
+text-shadow:0 0 30px #00ff88;
 }
 
-.logo {
-  margin-top: 35vh;
-  font-size: 46px;
-  color: #00ff88;
-  text-align: center;
-  text-shadow: 0 0 20px #00ff88;
+.enter-btn{
+margin:40px auto;
+padding:18px 40px;
+border:none;
+border-radius:30px;
+background:#00ff88;
+font-weight:900;
+box-shadow:0 0 30px #00ff88;
 }
 
-.enter-btn {
-  margin: 40px auto;
-  padding: 18px 42px;
-  font-size: 18px;
-  font-weight: 800;
-  border-radius: 30px;
-  border: none;
-  background: #00ff88;
-  color: black;
-  box-shadow: 0 0 25px #00ff88, 0 0 60px #00ff88;
+.header{
+padding:12px;
+text-align:center;
+font-weight:700;
+box-shadow:0 0 15px #00ff88;
 }
 
-/* HEADER */
-.header {
-  padding: 14px;
-  text-align: center;
-  font-weight: 700;
-  box-shadow: 0 0 15px #00ff88;
+/* Categories */
+.categories{
+display:flex;
+gap:10px;
+padding:10px;
 }
 
-/* CONTENT */
-.content {
-  flex: 1;
-  padding: 20px;
-  overflow-y: auto;
+.cat{
+flex:1;
+padding:12px;
+border:none;
+border-radius:15px;
+background:#222;
+color:white;
+font-weight:700;
 }
 
-/* PAGES */
-.page { display: none; }
-.page.active { display: block; }
-
-/* PRODUITS */
-.grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
+.cat.active{
+background:#00ff88;
+color:black;
+box-shadow:0 0 20px #00ff88;
 }
 
-.card {
-  background: rgba(0,0,0,0.65);
-  border-radius: 22px;
-  padding: 12px;
-  box-shadow: 0 0 25px rgba(0,255,136,0.5);
+/* Products */
+.content{flex:1;overflow:auto;padding:15px;}
+
+.cat-page{display:none;}
+.cat-page.active{display:block;}
+
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:15px;}
+
+.card{
+background:rgba(0,0,0,.7);
+padding:10px;
+border-radius:20px;
+box-shadow:0 0 20px #00ff88;
 }
 
-.card img {
-  width: 100%;
-  height: 160px;
-  border-radius: 18px;
-  object-fit: cover;
+.card video{
+width:100%;
+height:160px;
+object-fit:cover;
+border-radius:15px;
 }
 
-.card h3 {
-  margin-top: 10px;
+.snap-btn{
+margin-top:10px;
+width:100%;
+padding:14px;
+border:none;
+border-radius:30px;
+background:#00ff88;
+font-weight:800;
+box-shadow:0 0 20px #00ff88;
 }
 
-.card p {
-  color: #00ff88;
-  font-weight: 700;
+.slogan{
+margin:30px 10px;
+text-align:center;
+color:#00ff88;
+font-weight:800;
+text-shadow:0 0 15px #00ff88;
 }
 
-/* SNAP */
-.snap-btn {
-  margin-top: 10px;
-  width: 100%;
-  padding: 14px;
-  border-radius: 24px;
-  border: none;
-  background: #00ff88;
-  color: black;
-  font-weight: 800;
-  box-shadow: 0 0 20px #00ff88;
-}
-.snap-btn.big { margin-top: 30px; }
-
-/* SLOGAN */
-.slogan {
-  margin: 40px 10px 90px;
-  text-align: center;
-  font-size: 18px;
-  font-weight: 700;
-  color: #00ff88;
-  text-shadow: 0 0 15px #00ff88;
+.bottom{
+display:flex;
+justify-content:space-around;
+border-top:1px solid #00ff88;
+padding:10px;
 }
 
-/* BARRE DU BAS */
-.bottom {
-  display: flex;
-  justify-content: space-around;
-  padding: 12px 0;
-  border-top: 1px solid rgba(0,255,136,0.4);
-}
-.bottom button {
-  background: none;
-  border: none;
-  font-size: 22px;
-  color: #00ff88;
+.bottom button{
+background:none;
+border:none;
+font-size:22px;
+color:#00ff88;
 }
