@@ -1,55 +1,136 @@
-html, body {
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background: black;
-    width: 100%;
-    height: 100%;
-    overflow-x: hidden;
     font-family: Arial, sans-serif;
 }
 
-#app {
-    min-height: 100vh;
-    min-height: 100dvh;
+html, body {
+    width: 100%;
+    height: 100%;
+    background: black;
+    overflow: hidden;
+}
+
+/* Screens */
+.screen {
+    position: absolute;
+    inset: 0;
+    display: none;
+}
+
+.screen.active {
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
+/* INTRO */
 #intro {
-    text-align: center;
-    padding-top: 60px;
+    justify-content: center;
+    align-items: center;
+    background: black;
 }
 
-.logo {
-    width: 200px;
+/* Logo */
+.main-logo {
+    max-width: 90vw;
+    max-height: 55vh;   /* 🔥 clé du bug iPhone */
+    object-fit: contain;
+    margin-bottom: 30px;
 }
 
-.logo-small {
-    width: 100px;
-}
-
-#enterBtn {
-    margin-top: 20px;
-    padding: 15px 30px;
+/* Bouton */
+.enter-btn {
+    background: #00ff9c;
+    color: black;
+    border: none;
+    padding: 18px 40px;
     border-radius: 30px;
-    border: none;
-    background: #00ff99;
-    font-size: 18px;
+    font-size: 20px;
+    font-weight: bold;
+    box-shadow: 0 0 20px #00ff9c;
+    cursor: pointer;
 }
 
+/* APP */
+#app {
+    background: #000;
+    color: white;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.header-logo {
+    height: 60px;
+}
+
+/* Categories */
 .categories {
-    margin: 20px;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
 }
 
-.categories button {
-    margin: 5px;
-    padding: 10px 20px;
+.cat {
+    background: #111;
+    border: 2px solid #00ff9c;
+    color: #00ff9c;
+    padding: 8px 15px;
     border-radius: 20px;
-    border: none;
 }
 
-.page img {
-    width: 120px;
-    margin: 10px;
+.cat.active {
+    background: #00ff9c;
+    color: black;
+}
+
+/* Pages */
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+/* Puff grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 15px;
+}
+
+.card {
+    background: #111;
+    border-radius: 15px;
+    padding: 10px;
+    text-align: center;
+}
+
+.puff-img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.snap-btn {
+    margin-top: 10px;
+    background: #00ff9c;
+    border: none;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+/* Bottom bar */
+.bottom {
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
