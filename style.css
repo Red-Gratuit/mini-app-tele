@@ -40,3 +40,21 @@ display:none;
 .facade.tabac{background:linear-gradient(180deg,#442200,#000);}
 
 .bottom{padding:10px;text-align:center;border-top:1px solid #00ff88;}
+
+.main-logo{
+  width: 240px;
+  max-width: 80%;
+  margin-bottom: 30px;
+  filter: drop-shadow(0 0 30px #00ff99);
+  animation: glow 2s infinite alternate;
+}
+
+.header-logo{
+  height: 55px;
+  filter: drop-shadow(0 0 15px #00ff99);
+}
+
+@keyframes glow{
+  from{ filter: drop-shadow(0 0 10px #00ff99);}
+  to{ filter: drop-shadow(0 0 40px #00ff99);}
+}
