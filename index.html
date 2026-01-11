@@ -2,28 +2,36 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>XRshop</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>XRshop</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- Fond flyer -->
-<div class="bg"></div>
+<audio id="bgMusic" src="music.mp3" loop></audio>
 
-<header>
-  <h1>XRshop</h1>
-</header>
+<!-- INTRO -->
+<section id="intro" class="screen active">
+  <div class="bg"></div>
+  <h1 class="logo">XRshop</h1>
+  <button id="enterBtn" class="enter-btn">Choisir sa puff</button>
+</section>
 
-<!-- Catégories -->
+<!-- APP -->
+<section id="app" class="screen">
+
+<header class="header">XRshop</header>
+
+<!-- CATEGORIES -->
 <div class="categories">
-  <button class="cat active" data-view="view-puffs">💨 PUFFS</button>
-  <button class="cat" data-view="view-stup">🌿 STUP</button>
-  <button class="cat" data-view="view-tabac">🚬 TABAC</button>
+  <button class="cat active" data-view="puffs">💨 PUFFS</button>
+  <button class="cat" data-view="stup">🌿 STUP</button>
+  <button class="cat" data-view="tabac">🚬 TABAC</button>
 </div>
 
-<main>
+<main class="content">
 
 <!-- PUFFS -->
 <section class="view active" id="view-puffs">
@@ -33,19 +41,21 @@
       <video src="video1.mp4" autoplay muted loop playsinline></video>
       <h3>16K JNR</h3>
       <p>10€</p>
-      <button onclick="openSnap()">👻 Snapchat</button>
+      <button class="snap-btn">👻 Snapchat</button>
     </div>
 
     <div class="card">
       <video src="video2.mp4" autoplay muted loop playsinline></video>
       <h3>18K JNR</h3>
       <p>10€</p>
-      <button onclick="openSnap()">👻 Snapchat</button>
+      <button class="snap-btn">👻 Snapchat</button>
     </div>
 
   </div>
 
-  <p class="slogan">Le vrai goût des bonnes choses 😋🔥</p>
+  <div class="slogan">
+    Le vrai goût des bonnes choses 😋🔥
+  </div>
 </section>
 
 <!-- STUP -->
@@ -62,6 +72,12 @@
 
 </main>
 
+<nav class="bottom">
+  <button id="muteBtn">🔊</button>
+</nav>
+
 <script src="app.js"></script>
+</section>
+
 </body>
 </html>
