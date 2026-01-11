@@ -8,11 +8,12 @@ let musicStarted = false;
 
 /* Bouton principal */
 enterBtn.addEventListener("click", () => {
-  // 1. Afficher l’app
-  intro.classList.remove("show");
-  app.classList.add("show");
+  // cacher intro
+  intro.classList.remove("active");
+  // afficher app
+  app.classList.add("active");
 
-  // 2. Démarrer le son DIRECTEMENT (obligatoire iOS)
+  // démarrer musique (obligatoire iOS)
   if (!musicStarted) {
     music.volume = 1;
     music.play().catch(() => {});
@@ -30,9 +31,9 @@ muteBtn.addEventListener("click", () => {
 document.querySelectorAll(".cat").forEach(btn => {
   btn.addEventListener("click", () => {
     document.querySelectorAll(".cat").forEach(b => b.classList.remove("active"));
-    document.querySelectorAll(".page").forEach(p => p.classList.remove("show"));
+    document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
 
     btn.classList.add("active");
-    document.getElementById("page-" + btn.dataset.page).classList.add("show");
+    document.getElementById("page-" + btn.dataset.page).classList.add("active");
   });
 });
