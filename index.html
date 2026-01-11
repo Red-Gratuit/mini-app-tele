@@ -13,94 +13,89 @@
 <audio id="bgMusic" src="music.mp3" loop></audio>
 
 <!-- INTRO -->
-<section id="intro" class="screen active">
-  <div class="bg"></div>
+<section id="intro" class="screen show">
+  <div class="intro-bg"></div>
   <img src="logo.png" class="main-logo">
   <button id="enterBtn" class="enter-btn">Choisir sa puff</button>
 </section>
 
 <!-- APP -->
 <section id="app" class="screen">
+  <header class="header">
+    <img src="logo.png" class="header-logo">
+  </header>
 
-<header class="header">
-  <img src="logo.png" class="header-logo">
-</header>
-
-<div class="categories">
-  <button class="cat active" data-page="puffs">💨 PUFFS</button>
-  <button class="cat" data-page="stup">🌿 STUP</button>
-  <button class="cat" data-page="tabac">🚬 TABAC</button>
-</div>
-
-<main class="content">
-
-<!-- PUFFS -->
-<section class="page active" id="page-puffs">
-  <div class="grid">
-
-    <div class="card">
-      <img src="puff1.jpg" class="puff-img">
-      <h3>JNR 16K</h3>
-      <p>10€</p>
-      <button class="snap-btn">👻 Snapchat</button>
-    </div>
-
-    <div class="card">
-      <img src="puff2.jpg" class="puff-img">
-      <h3>JNR 18K</h3>
-      <p>10€</p>
-      <button class="snap-btn">👻 Snapchat</button>
-    </div>
-
-    <div class="card">
-      <img src="puff3.jpg" class="puff-img">
-      <h3>RandM Tornado</h3>
-      <p>12€</p>
-      <button class="snap-btn">👻 Snapchat</button>
-    </div>
-
-    <div class="card">
-      <img src="puff4.jpg" class="puff-img">
-      <h3>Elf Bar</h3>
-      <p>9€</p>
-      <button class="snap-btn">👻 Snapchat</button>
-    </div>
-
-    <div class="card">
-      <img src="puff5.jpg" class="puff-img">
-      <h3>Lost Mary</h3>
-      <p>11€</p>
-      <button class="snap-btn">👻 Snapchat</button>
-    </div>
-
+  <div class="categories">
+    <button class="cat active" data-page="puffs">💨 PUFFS</button>
+    <button class="cat" data-page="stup">🌿 STUP</button>
+    <button class="cat" data-page="tabac">🚬 TABAC</button>
   </div>
 
-  <div class="slogan">Le vrai goût des bonnes choses 😋🔥</div>
+  <main class="content">
+
+    <!-- PUFFS -->
+    <section class="page show" id="page-puffs">
+      <div class="grid">
+
+        <div class="card">
+          <img src="puff1.jpg">
+          <h3>JNR 16K</h3>
+          <p>10€</p>
+          <button class="snap-btn">👻 Snapchat</button>
+        </div>
+
+        <div class="card">
+          <img src="puff2.jpg">
+          <h3>JNR 18K</h3>
+          <p>10€</p>
+          <button class="snap-btn">👻 Snapchat</button>
+        </div>
+
+        <div class="card">
+          <img src="puff3.jpg">
+          <h3>RandM Tornado</h3>
+          <p>12€</p>
+          <button class="snap-btn">👻 Snapchat</button>
+        </div>
+
+        <div class="card">
+          <img src="puff4.jpg">
+          <h3>Elf Bar</h3>
+          <p>9€</p>
+          <button class="snap-btn">👻 Snapchat</button>
+        </div>
+
+        <div class="card">
+          <img src="puff5.jpg">
+          <h3>Lost Mary</h3>
+          <p>11€</p>
+          <button class="snap-btn">👻 Snapchat</button>
+        </div>
+
+      </div>
+
+      <div class="slogan">Le vrai goût des bonnes choses 😋🔥</div>
+    </section>
+
+    <!-- STUP -->
+    <section class="page" id="page-stup">
+      <h2>🌿 STUP</h2>
+      <p>Bientôt disponible</p>
+    </section>
+
+    <!-- TABAC -->
+    <section class="page" id="page-tabac">
+      <h2>🚬 TABAC</h2>
+      <p>Bientôt disponible</p>
+    </section>
+
+  </main>
+
+  <nav class="bottom">
+    <button id="muteBtn">🔊</button>
+  </nav>
 </section>
-
-<!-- STUP -->
-<section class="page" id="page-stup">
-  <div class="facade stup">
-    <h2>🌿 STUP</h2>
-    <p>Catalogue bientôt disponible</p>
-  </div>
-</section>
-
-<!-- TABAC -->
-<section class="page" id="page-tabac">
-  <div class="facade tabac">
-    <h2>🚬 TABAC</h2>
-    <p>Catalogue bientôt disponible</p>
-  </div>
-</section>
-
-</main>
-
-<nav class="bottom">
-  <button id="muteBtn">🔊</button>
-</nav>
 
 <script src="app.js"></script>
-</section>
 </body>
 </html>
