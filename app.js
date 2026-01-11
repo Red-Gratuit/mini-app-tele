@@ -4,6 +4,7 @@ const enterBtn = document.getElementById("enterBtn");
 const music = document.getElementById("bgMusic");
 const muteBtn = document.getElementById("muteBtn");
 
+/* Entrer dans l'app */
 enterBtn.addEventListener("click", () => {
   intro.classList.remove("show");
   app.classList.add("show");
@@ -19,6 +20,7 @@ enterBtn.addEventListener("click", () => {
   }, 100);
 });
 
+/* Mute */
 muteBtn.addEventListener("click", () => {
   music.muted = !music.muted;
   muteBtn.textContent = music.muted ? "🔇" : "🔊";
