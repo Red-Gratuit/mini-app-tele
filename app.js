@@ -1,28 +1,23 @@
+const tg = window.Telegram?.WebApp;
+if (tg) {
+    tg.expand();
+    tg.ready();
+}
+
+const btn = document.getElementById("enterBtn");
 const intro = document.getElementById("intro");
-const app = document.getElementById("app");
-const enterBtn = document.getElementById("enterBtn");
+const main = document.getElementById("main");
 const music = document.getElementById("bgMusic");
-const muteBtn = document.getElementById("muteBtn");
 
-enterBtn.onclick = () => {
-  intro.classList.remove("active");
-  app.classList.add("active");
-
-  music.volume = 1;
-  music.play().catch(()=>{});
+btn.onclick = () => {
+    music.play();
+    intro.style.display = "none";
+    main.style.display = "block";
 };
 
-muteBtn.onclick = () => {
-  music.muted = !music.muted;
-  muteBtn.innerText = music.muted ? "🔇" : "🔊";
-};
-
-document.querySelectorAll(".cat").forEach(btn => {
-  btn.onclick = () => {
-    document.querySelectorAll(".cat").forEach(b=>b.classList.remove("active"));
-    document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
-
-    btn.classList.add("active");
-    document.getElementById("page-"+btn.dataset.page).classList.add("active");
-  };
+document.querySelectorAll(".categories button").forEach(btn => {
+    btn.onclick = () => {
+        document.querySelectorAll(".page").forEach(p => p.style.display="none");
+        document.getElementById(btn.dataset.page).style.display="block";
+    };
 });
