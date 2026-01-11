@@ -4,20 +4,20 @@ const enterBtn = document.getElementById("enterBtn");
 const music = document.getElementById("bgMusic");
 const muteBtn = document.getElementById("muteBtn");
 
-/* Entrer dans l'app */
+let musicStarted = false;
+
+/* Bouton principal */
 enterBtn.addEventListener("click", () => {
+  // 1. Afficher l’app
   intro.classList.remove("show");
   app.classList.add("show");
 
-  music.volume = 0;
-  music.play();
-
-  let v = 0;
-  const fade = setInterval(() => {
-    v += 0.05;
-    music.volume = v;
-    if (v >= 1) clearInterval(fade);
-  }, 100);
+  // 2. Démarrer le son DIRECTEMENT (obligatoire iOS)
+  if (!musicStarted) {
+    music.volume = 1;
+    music.play().catch(() => {});
+    musicStarted = true;
+  }
 });
 
 /* Mute */
