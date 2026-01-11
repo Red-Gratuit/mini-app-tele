@@ -1,166 +1,42 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:system-ui;
-}
-
-body{
-background:url("flyer.jpg") center/cover fixed;
-color:white;
-overflow:hidden;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:system-ui;}
+body{background:url("flyer.jpg") center/cover fixed;color:white;overflow:hidden;}
 
 .bg{
-position:absolute;
-inset:0;
+position:absolute;inset:0;
 background:url("flyer.jpg") center/cover;
 filter:blur(20px) brightness(.5);
 z-index:-1;
 }
 
-/* Screens */
-.screen{
-position:fixed;
-inset:0;
-display:none;
-flex-direction:column;
-}
+.screen{position:fixed;inset:0;display:none;flex-direction:column;}
 .screen.active{display:flex;}
 
-.logo{
-margin-top:35vh;
-text-align:center;
-font-size:42px;
-color:#00ff88;
-text-shadow:0 0 30px #00ff88;
-}
+.logo{margin-top:35vh;text-align:center;font-size:42px;color:#00ff88;text-shadow:0 0 30px #00ff88;}
+.enter-btn{margin:40px auto;padding:18px 40px;border:none;border-radius:30px;background:#00ff88;font-weight:900;box-shadow:0 0 30px #00ff88;}
+.header{padding:12px;text-align:center;font-weight:700;box-shadow:0 0 15px #00ff88;}
 
-.enter-btn{
-margin:40px auto;
-padding:18px 40px;
-border:none;
-border-radius:30px;
-background:#00ff88;
-font-weight:900;
-box-shadow:0 0 30px #00ff88;
-}
+.categories{display:flex;gap:10px;padding:10px;}
+.cat{flex:1;padding:12px;border:none;border-radius:15px;background:#222;color:white;font-weight:700;}
+.cat.active{background:#00ff88;color:black;box-shadow:0 0 20px #00ff88;}
 
-.header{
-padding:12px;
-text-align:center;
-font-weight:700;
-box-shadow:0 0 15px #00ff88;
-}
-
-/* Categories */
-.categories{
-display:flex;
-gap:10px;
-padding:10px;
-}
-
-.cat{
-flex:1;
-padding:12px;
-border:none;
-border-radius:15px;
-background:#222;
-color:white;
-font-weight:700;
-}
-
-.cat.active{
-background:#00ff88;
-color:black;
-box-shadow:0 0 20px #00ff88;
-}
-
-/* Content */
-.content{
-flex:1;
-position:relative;
-overflow:hidden;
-}
+.content{flex:1;position:relative;overflow:hidden;}
 
 .page{
-position:absolute;
-inset:0;
-padding:20px;
-opacity:0;
-transform:translateX(40px);
+position:absolute;inset:0;padding:20px;
+opacity:0;transform:translateX(40px);
 transition:.4s ease;
 display:none;
 }
+.page.active{display:block;opacity:1;transform:translateX(0);}
 
-.page.active{
-display:block;
-opacity:1;
-transform:translateX(0);
-}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:15px;}
+.card{background:rgba(0,0,0,.7);padding:10px;border-radius:20px;box-shadow:0 0 20px #00ff88;}
+.card video{width:100%;height:160px;object-fit:cover;border-radius:15px;}
+.snap-btn{margin-top:10px;width:100%;padding:14px;border:none;border-radius:30px;background:#00ff88;font-weight:800;box-shadow:0 0 20px #00ff88;}
+.slogan{text-align:center;margin:30px;color:#00ff88;font-weight:800;}
 
-/* Products */
-.grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:15px;
-}
+.facade{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:24px;}
+.facade.stup{background:linear-gradient(180deg,#004400,#000);}
+.facade.tabac{background:linear-gradient(180deg,#442200,#000);}
 
-.card{
-background:rgba(0,0,0,.7);
-padding:10px;
-border-radius:20px;
-box-shadow:0 0 20px #00ff88;
-}
-
-.card video{
-width:100%;
-height:160px;
-object-fit:cover;
-border-radius:15px;
-}
-
-.snap-btn{
-margin-top:10px;
-width:100%;
-padding:14px;
-border:none;
-border-radius:30px;
-background:#00ff88;
-font-weight:800;
-box-shadow:0 0 20px #00ff88;
-}
-
-.slogan{
-margin:30px 10px;
-text-align:center;
-color:#00ff88;
-font-weight:800;
-text-shadow:0 0 15px #00ff88;
-}
-
-/* Facades */
-.facade{
-height:100%;
-display:flex;
-flex-direction:column;
-align-items:center;
-justify-content:center;
-font-size:24px;
-text-align:center;
-}
-
-.facade.stup{
-background:linear-gradient(180deg,#004400,#000);
-}
-
-.facade.tabac{
-background:linear-gradient(180deg,#442200,#000);
-}
-
-/* Bottom */
-.bottom{
-padding:10px;
-text-align:center;
-border-top:1px solid #00ff88;
-}
+.bottom{padding:10px;text-align:center;border-top:1px solid #00ff88;}
