@@ -4,36 +4,25 @@ const enterBtn = document.getElementById("enterBtn");
 const music = document.getElementById("bgMusic");
 const muteBtn = document.getElementById("muteBtn");
 
-let musicStarted = false;
-
-/* Bouton principal */
-enterBtn.addEventListener("click", () => {
-  // cacher intro
+enterBtn.onclick = () => {
   intro.classList.remove("active");
-  // afficher app
   app.classList.add("active");
 
-  // démarrer musique (obligatoire iOS)
-  if (!musicStarted) {
-    music.volume = 1;
-    music.play().catch(() => {});
-    musicStarted = true;
-  }
-});
+  music.volume = 1;
+  music.play().catch(()=>{});
+};
 
-/* Mute */
-muteBtn.addEventListener("click", () => {
+muteBtn.onclick = () => {
   music.muted = !music.muted;
-  muteBtn.textContent = music.muted ? "🔇" : "🔊";
-});
+  muteBtn.innerText = music.muted ? "🔇" : "🔊";
+};
 
-/* Categories */
 document.querySelectorAll(".cat").forEach(btn => {
-  btn.addEventListener("click", () => {
-    document.querySelectorAll(".cat").forEach(b => b.classList.remove("active"));
-    document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
+  btn.onclick = () => {
+    document.querySelectorAll(".cat").forEach(b=>b.classList.remove("active"));
+    document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
 
     btn.classList.add("active");
-    document.getElementById("page-" + btn.dataset.page).classList.add("active");
-  });
+    document.getElementById("page-"+btn.dataset.page).classList.add("active");
+  };
 });
