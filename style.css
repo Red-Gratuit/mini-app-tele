@@ -12,31 +12,31 @@ html, body {
     overflow: hidden;
 }
 
-/* Screens */
 .screen {
-    position: absolute;
+    position: fixed;
     inset: 0;
     display: none;
 }
 
 .screen.active {
     display: flex;
-    flex-direction: column;
 }
 
 /* INTRO */
 #intro {
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
+    padding: 30px 20px 40px;
     background: black;
 }
 
 /* Logo */
 .main-logo {
-    max-width: 90vw;
-    max-height: 55vh;   /* 🔥 clé du bug iPhone */
+    width: 90%;
+    max-height: 45%;
     object-fit: contain;
-    margin-bottom: 30px;
+    margin-top: 20px;
 }
 
 /* Bouton */
@@ -44,18 +44,21 @@ html, body {
     background: #00ff9c;
     color: black;
     border: none;
-    padding: 18px 40px;
+    width: 90%;
+    max-width: 320px;
+    padding: 18px 0;
     border-radius: 30px;
     font-size: 20px;
     font-weight: bold;
     box-shadow: 0 0 20px #00ff9c;
-    cursor: pointer;
+    margin-bottom: 20px;
 }
 
 /* APP */
 #app {
     background: #000;
     color: white;
+    flex-direction: column;
 }
 
 /* Header */
@@ -66,7 +69,7 @@ html, body {
 }
 
 .header-logo {
-    height: 60px;
+    height: 50px;
 }
 
 /* Categories */
@@ -124,13 +127,4 @@ html, body {
     border: none;
     padding: 10px;
     border-radius: 20px;
-}
-
-/* Bottom bar */
-.bottom {
-    position: fixed;
-    bottom: 10px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
 }
