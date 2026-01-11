@@ -1,18 +1,29 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:system-ui;
+}
+
 body{
 background:url("flyer.jpg") center/cover fixed;
 color:white;
-font-family:system-ui;
 }
 
 body::before{
 content:"";
 position:fixed;
 inset:0;
-background:rgba(0,0,0,.75);
+background:rgba(0,0,0,.8);
 z-index:-1;
 }
 
-.screen{display:none;flex-direction:column;position:fixed;inset:0;}
+.screen{
+position:fixed;
+inset:0;
+display:none;
+flex-direction:column;
+}
 .screen.active{display:flex;}
 
 .bg{
@@ -47,7 +58,6 @@ font-weight:700;
 box-shadow:0 0 15px #00ff88;
 }
 
-/* Categories */
 .categories{
 display:flex;
 gap:10px;
@@ -70,13 +80,32 @@ color:black;
 box-shadow:0 0 20px #00ff88;
 }
 
-/* Products */
-.content{flex:1;overflow:auto;padding:15px;}
+.content{
+flex:1;
+position:relative;
+overflow:hidden;
+}
 
-.cat-page{display:none;}
-.cat-page.active{display:block;}
+.view{
+position:absolute;
+inset:0;
+padding:20px;
+opacity:0;
+transform:translateX(40px);
+transition:.4s ease;
+}
 
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:15px;}
+.view.active{
+opacity:1;
+transform:translateX(0);
+position:relative;
+}
+
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:15px;
+}
 
 .card{
 background:rgba(0,0,0,.7);
@@ -112,15 +141,7 @@ text-shadow:0 0 15px #00ff88;
 }
 
 .bottom{
-display:flex;
-justify-content:space-around;
-border-top:1px solid #00ff88;
 padding:10px;
-}
-
-.bottom button{
-background:none;
-border:none;
-font-size:22px;
-color:#00ff88;
+text-align:center;
+border-top:1px solid #00ff88;
 }

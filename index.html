@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>XRshop</title>
-
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <link rel="stylesheet" href="style.css">
 </head>
@@ -27,27 +26,15 @@
 
 <!-- CATEGORIES -->
 <div class="categories">
-  <button class="cat active" data-cat="stup">🌿 STUP</button>
-  <button class="cat" data-cat="tabac">🚬 TABAC</button>
-  <button class="cat" data-cat="puffs">💨 PUFFS</button>
+  <button class="cat active" data-view="puffs">💨 PUFFS</button>
+  <button class="cat" data-view="stup">🌿 STUP</button>
+  <button class="cat" data-view="tabac">🚬 TABAC</button>
 </div>
 
 <main class="content">
 
-<!-- STUP -->
-<section class="cat-page active" id="stup">
-  <h2>🌿 STUP</h2>
-  <p>À venir…</p>
-</section>
-
-<!-- TABAC -->
-<section class="cat-page" id="tabac">
-  <h2>🚬 TABAC</h2>
-  <p>À venir…</p>
-</section>
-
 <!-- PUFFS -->
-<section class="cat-page" id="puffs">
+<section class="view active" id="view-puffs">
   <div class="grid">
 
     <div class="card">
@@ -71,17 +58,26 @@
   </div>
 </section>
 
+<!-- STUP -->
+<section class="view" id="view-stup">
+  <h2>🌿 STUP</h2>
+  <p>À venir…</p>
+</section>
+
+<!-- TABAC -->
+<section class="view" id="view-tabac">
+  <h2>🚬 TABAC</h2>
+  <p>À venir…</p>
+</section>
+
 </main>
 
 <nav class="bottom">
-  <button>🛒</button>
-  <button>ℹ️</button>
-  <button>📞</button>
   <button id="muteBtn">🔊</button>
 </nav>
 
+<script src="app.js"></script>
 </section>
 
-<script src="app.js"></script>
 </body>
 </html>
