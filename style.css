@@ -21,12 +21,40 @@ body {
 }
 
 /* INTRO */
+#intro {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+}
+
 .intro-bg {
   position: fixed;
   inset: 0;
   background: url("flyer.jpg") center/cover no-repeat;
-  filter: blur(12px) brightness(0.6);
-  z-index: -1;
+  filter: blur(10px) brightness(0.6);
+  z-index: 1;
+}
+
+.main-logo {
+  position: relative;
+  z-index: 3;
+  width: 220px;
+  display: block;
+  margin: 120px auto 40px;
+}
+
+.enter-btn {
+  position: relative;
+  z-index: 3;
+  display: block;
+  margin: auto;
+  padding: 16px 40px;
+  font-size: 18px;
+  border-radius: 40px;
+  background: #00ff88;
+  border: none;
+  font-weight: bold;
+  box-shadow: 0 0 25px #00ff88;
 }
 
 .main-logo {
